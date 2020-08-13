@@ -14,13 +14,19 @@ public class txtRead1 {
 		FileReader fr= new FileReader(f);
 		BufferedReader bf = new BufferedReader(fr);
 		int line=0;
+		boolean lineFound= true;
 		String data ;
 		while((data=bf.readLine())!=null) {
 			line++;
 			if(line==linenumber) {   //here is the logic for particular line
 			System.out.println(data);
+			lineFound= false;
+			break;
 			}
 		}	
+		if(lineFound=true) {
+			System.out.println("entered line does not exist");
+		}
 	}
 	
 	public static void main(String[] args) throws IOException {
